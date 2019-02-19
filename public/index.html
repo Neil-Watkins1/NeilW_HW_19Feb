@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Great Beers</title>
+	<script src="./js/bundle.js"></script>
+</head>
+<body>
+
+	<h1>Great Beers</h1>
+
+	<div id="app">
+		<label for="beerSelect">Select a Beer</label>
+<select v-on:change="beerSelect" id="beer_select" v-model="selectedBeerList">
+	<option disabled value=''>Select a Beer</option>
+	<option v-for="(beer, index) in beers" :value="index">{{beer.name}}</option>
+</select>
+<div id="selected_beer" v-if="selectedBeer">
+<button v-on:click="addToFav">Add Beer</button>
+	</div>
+	<div v-for="beer in favouriteBeers">
+		<li>{{beer.name}}</li>
+	</div>
+	</div>
+</body>
+</html>
