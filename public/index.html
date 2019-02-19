@@ -18,7 +18,14 @@
 <button v-on:click="addToFav">Add Beer</button>
 	</div>
 	<div v-for="beer in favouriteBeers">
-		<li>{{beer.name}}</li>
+		<li><h2>Beer Name: {{ beer.name }}</h2></li>
+		<br>
+		<li> <img v-bind:alt = "beer.name" height="250" width="60"
+			v-bind:src = "beer.image_url" /></li>
+		<li>a.b.v. {{ beer.abv }}%</li>
+		<br>
+		<li>{{ beer.description }}</li>
+
 	</div>
 	</div>
 </body>
