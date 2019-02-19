@@ -17,7 +17,8 @@
 <div id="selected_beer" v-if="selectedBeer">
 <button v-on:click="addToFav">Add Beer</button>
 	</div>
-	<div v-for="beer in favouriteBeers">
+	<div v-for="(beer, index) in favouriteBeers">
+		<ul style="list-style-type:none;">
 		<li><h2>Beer Name: {{ beer.name }}</h2></li>
 		<br>
 		<li> <img v-bind:alt = "beer.name" height="250" width="60"
@@ -26,6 +27,11 @@
 		<br>
 		<li>{{ beer.description }}</li>
 
+	
+  <li><button v-on:click="favouriteBeers.splice(index, 1)">remove</button>
+</li>
+<br>
+</ul>
 	</div>
 	</div>
 </body>
